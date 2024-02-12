@@ -10,13 +10,9 @@ import { NgClass } from '@angular/common';
   styleUrl: './digit.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DigitComponent implements OnChanges {
+export class DigitComponent {
   @Input() digit?: number;
-  value?: Digit;
+  value?: Digit = new Digit();
 
   constructor() {}
-
-  ngOnChanges(changes: SimpleChanges): void {
-    this.value = new Digit(this.digit ?? 0);
-  }
 }
